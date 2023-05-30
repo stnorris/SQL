@@ -1,0 +1,24 @@
+CREATE TABLE fruitstand (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, price integer, organic TEXT, artisanal TEXT);
+
+INSERT INTO fruitstand VALUES (1, "Bananas", 20, .50, "yes", "no");
+INSERT INTO fruitstand VALUES (2, "Oranges", 10, 3.00, "no", "no");
+INSERT INTO fruitstand VALUES (3, "Butter", 5, 4.00, "no", "no");
+INSERT INTO fruitstand VALUES (4, "Lemons", 50, 0.99, "yes", "no");
+INSERT INTO fruitstand VALUES (5, "Honey", 15, 3.99, "yes", "no");
+INSERT INTO fruitstand VALUES (6, "Beeswax", 20, 2.99, "yes", "yes");
+INSERT INTO fruitstand VALUES (7, "Soap Bar", 30, 2.99, "no", "yes");
+INSERT INTO fruitstand VALUES (8, "Shampoo", 35, 4.99, "no", "yes");
+INSERT INTO fruitstand VALUES (9, "Lotion", 20, 3.99, "no", "yes");
+INSERT INTO fruitstand VALUES (10, "Candles", 15, 15.99, "no", "yes");
+INSERT INTO fruitstand VALUES (11, "Matches", 23, 2.99, "no", "yes");
+INSERT INTO fruitstand VALUES (12, "Lemonade", 20, 2.50, "yes", "yes");
+INSERT INTO fruitstand VALUES (13, "Cards", 15, 3.99, "no", "yes");
+INSERT INTO fruitstand VALUES (14, "Popcorn", 30, 4.99, "no", "yes");
+INSERT INTO fruitstand VALUES (15, "Wine", 25, 12.99, "no", "no");
+
+--display the database ordered by price.
+SELECT * FROM fruitstand ORDER BY price DESC
+
+--what is the avg price at the fruitstand?
+SELECT AVG(price) "avg item price"
+FROM fruitstand; 
