@@ -36,21 +36,31 @@ INSERT INTO topmovies(Rank,Title,Studio,Worldwide,Domestic,DomesticPct,Overseas,
 SELECT * FROM topmovies;
 
 /* What is the average worldwide gross?*/
-
 SELECT COUNT(*), AVG(Worldwide) FROM topmovies;
+
 
 /* whats the oldest movie on the list*/
 SELECT Title, Year FROM topmovies ORDER BY Year asc LIMIT 1; 
 
-/* Which movie made the least amount of money? */
 
+/* Which movie made the least amount of money? */
 SELECT Title, Worldwide FROM topmovies ORDER BY Worldwide ASC LIMIT 5;
 
-/* How many movies did each studio put out? */
 
+/* How many movies did each studio put out? */
 SELECT Studio, COUNT(*) FROM topmovies GROUP BY Studio;
 
 
 /* What is the most recent movie on the list? */
-
 SELECT MAX(Year) FROM topmovies;
+
+
+/* How many movies before 2000 made greater than 1.3 million? */
+SELECT * FROM topmovies WHERE Year < 2000 AND Worldwide > 1300;
+
+
+/* How many movies on this list did each studio produce? */
+SELECT title, COUNT(Studio)
+FROM topmovies
+GROUP BY Studio
+HAVING COUNT(Studio) >1;
