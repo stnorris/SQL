@@ -1,0 +1,25 @@
+-- 1. order all items by price 
+
+SELECT *
+FROM superstore
+ORDER BY price;
+
+-- 2. select the most expensive item sold at the store.
+
+SELECT MAX(price)
+FROM superstore;
+
+-- 3. order the kitchen supplies by price
+
+SELECT item_name, price
+FROM superstore
+WHERE category = 'Kitchen Supplies'
+ORDER BY price;
+
+
+-- 4. How many slow cookers and air purifiers are in stock?
+
+
+SELECT item_name, stock_quantity
+FROM superstore
+WHERE item_name IN ('Slow Cooker', 'Air Purifier')
